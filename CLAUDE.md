@@ -47,6 +47,12 @@
 - **Spacing:** Use intentional, consistent spacing tokens — not random Tailwind steps.
 - **Depth:** Surfaces should have a layering system (base → elevated → floating), not all sit at the same z-plane.
 
+## GitHub & Version Control
+- All changes are made **locally only** by default. Never push to GitHub unless explicitly told to.
+- Only push when the user says something like "push to GitHub", "push these changes", or "deploy to GitHub". Ambiguous requests are not permission — ask first.
+- Always confirm with the user before running any `git push` command, no exceptions.
+- Never force push, amend published commits, or delete remote branches without explicit instruction.
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
