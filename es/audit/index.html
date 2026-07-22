@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auditoría de Tienda — AirWeb</title>
+  <meta name="description" content="Una auditoría pagada de tu tienda Shopify, entregada en 7 días. €300, un solo pago, sin compromiso de retainer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://airweb.app/es/audit">
+  <link rel="alternate" hreflang="en" href="https://airweb.app/audit">
+  <link rel="alternate" hreflang="es" href="https://airweb.app/es/audit">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Auditoría de Tienda — AirWeb">
+  <meta property="og:description" content="Una auditoría pagada de tu tienda Shopify, entregada en 7 días. €300, un solo pago, sin compromiso de retainer.">
+  <meta property="og:url" content="https://airweb.app/es/audit">
+  <meta property="og:image" content="https://airweb.app/brand_assets/AIRWEB.png">
+  <meta property="og:site_name" content="AirWeb">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Auditoría de Tienda — AirWeb">
+  <meta name="twitter:description" content="Una auditoría pagada de tu tienda Shopify, entregada en 7 días. €300, un solo pago, sin compromiso de retainer.">
+  <meta name="twitter:image" content="https://airweb.app/brand_assets/AIRWEB.png">
+  <link rel="icon" type="image/svg+xml" href="../../brand_assets/airweb-logo.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:       #F8FAFC;
+      --surface:  #FFFFFF;
+      --elevated: #F1F5F9;
+      --blue:     #2563EB;
+      --muted:    #475569;
+      --border:   rgba(11,19,43,0.08);
+    }
+
+    body {
+      background: var(--bg);
+      color: #0B132B;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700; font-size: 0.82rem;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      border-radius: 100px;
+      transition: transform 0.2s cubic-bezier(.4,0,.2,1),
+                  box-shadow 0.2s cubic-bezier(.4,0,.2,1),
+                  filter 0.2s, background 0.2s, border-color 0.2s;
+    }
+    .btn-primary-lg {
+      padding: 14px 32px;
+      background: #2563EB;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.25);
+    }
+    .btn-primary-lg:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,0.35); }
+    .btn-primary-lg:active { transform: translateY(0); }
+    .btn-primary-lg:focus-visible { outline: 2px solid #2563EB; outline-offset: 3px; }
+
+    .btn-outline-lg {
+      padding: 14px 32px;
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: #0B132B;
+    }
+    .btn-outline-lg:hover { border-color: rgba(37,99,235,0.4); color: #2563EB; transform: translateY(-1px); }
+    .btn-outline-lg:active { transform: translateY(0); }
+    .btn-outline-lg:focus-visible { outline: 2px solid #2563EB; outline-offset: 3px; }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(37,99,235,0.05);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: #2563EB;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,0,0,0.06); }
+
+    .check-item { display: flex; align-items: flex-start; gap: 10px; }
+    .check-icon {
+      width: 20px; height: 20px; min-width: 20px;
+      background: rgba(37,99,235,0.06);
+      border: 1px solid rgba(37,99,235,0.15);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-trigger {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 0; background: none; border: none; cursor: pointer;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;
+      font-size: 0.95rem; color: #0B132B; text-align: left;
+    }
+    .faq-trigger:focus-visible { outline: 2px solid #2563EB; outline-offset: 4px; border-radius: 4px; }
+    .faq-icon { width: 28px; height: 28px; background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; min-width: 28px; }
+    .faq-icon-v { transition: transform 0.3s cubic-bezier(.4,0,.2,1), opacity 0.3s; }
+    .faq-item.open .faq-icon-v { transform: rotate(90deg); opacity: 0; }
+    .faq-body { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(.4,0,.2,1), padding 0.3s; }
+    .faq-body.open { max-height: 300px; padding-bottom: 20px; }
+    .faq-answer { font-size: 0.875rem; line-height: 1.75; color: var(--muted); }
+
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand-name { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.01em; color: #0B132B; }
+
+    @media (max-width: 640px) {
+      .three-col { grid-template-columns: 1fr !important; }
+    }
+    @media (min-width: 641px) and (max-width: 900px) {
+      .three-col { grid-template-columns: 1fr 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header style="padding:24px 32px;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;">
+  <a href="/es" class="nav-brand">
+    <img src="../../brand_assets/airweb-logo.svg" style="width:32px;height:32px;object-fit:contain;" alt="AirWeb" />
+    <span class="nav-brand-name">AirWeb</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div style="display:flex;gap:6px;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;"><a href="/audit" style="color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:6px;transition:color .2s;">EN</a><a href="/es/audit" style="color:#2563EB;text-decoration:none;padding:4px 10px;background:rgba(37,99,235,0.06);border-radius:6px;">ES</a></div>
+    <a href="/es" style="font-size:.8rem;color:var(--muted);text-decoration:none;font-weight:500;transition:color .2s;" onmouseover="this.style.color='#2563EB'" onmouseout="this.style.color='var(--muted)'">&larr; Volver al inicio</a>
+  </div>
+</header>
+
+
+<!-- HERO -->
+<section style="padding:80px 24px 64px;text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <span class="tag fade-up" style="margin-bottom:1.5rem;display:inline-flex;">Auditor&iacute;a de Tienda</span>
+    <h1 class="fade-up" style="font-weight:800;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-0.03em;line-height:1.1;margin:1rem 0 1.5rem;">
+      Una auditor&iacute;a pagada de tu tienda Shopify,<br />entregada en <span class="text-gradient">7 d&iacute;as.</span>
+    </h1>
+    <p class="fade-up" style="font-size:1.05rem;line-height:1.75;color:var(--muted);max-width:540px;margin:0 auto 2.5rem;">
+      &euro;300, un solo pago, sin compromiso de retainer. Recibes un entregable real &mdash; no una consulta gratis disfrazada de pitch de ventas.
+    </p>
+    <div class="fade-up" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="#stripe-payment-link" class="btn btn-primary-lg">
+        Pagar Ahora &mdash; &euro;300
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#calendly-link" class="btn btn-outline-lg">Agendar Llamada Estrat&eacute;gica</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- QUE RECIBES -->
+<section style="padding:64px 24px 80px;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-0.03em;">Qu&eacute; recibes</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="three-col">
+      <div class="card fade-up" style="padding:2rem;text-align:center;">
+        <div style="width:48px;height:48px;background:rgba(37,99,235,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="#2563EB" stroke="none"/></svg>
+        </div>
+        <h3 style="font-weight:700;font-size:1rem;margin-bottom:.6rem;">Walkthrough de 45 min en Loom</h3>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.7;">Una auditor&iacute;a en video completa de tu tienda: front-end, m&oacute;vil, checkout, velocidad de carga, email y SEO &mdash; con mi pantalla y voz gui&aacute;ndote por cada problema.</p>
+      </div>
+      <div class="card fade-up" style="padding:2rem;text-align:center;">
+        <div style="width:48px;height:48px;background:rgba(37,99,235,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3 style="font-weight:700;font-size:1rem;margin-bottom:.6rem;">Reporte PDF escrito</h3>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.7;">8&ndash;10 problemas priorizados por impacto en ingresos, esfuerzo y prioridad. Acciones claras que puedes entregar a cualquier desarrollador &mdash; o dejarme a m&iacute;.</p>
+      </div>
+      <div class="card fade-up" style="padding:2rem;text-align:center;">
+        <div style="width:48px;height:48px;background:rgba(37,99,235,0.08);border-radius:12px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3 style="font-weight:700;font-size:1rem;margin-bottom:.6rem;">Top 3 fixes implementados</h3>
+        <p style="color:var(--muted);font-size:.85rem;line-height:1.7;">No solo se&ntilde;alo problemas &mdash; personalmente implemento los 3 fixes de mayor impacto de la auditor&iacute;a. Cambios reales, en vivo en tu tienda.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- POR QUE ES PAGADA -->
+<section style="padding:48px 24px 64px;">
+  <div style="max-width:640px;margin:0 auto;text-align:center;" class="fade-up">
+    <h2 style="font-weight:800;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;margin-bottom:1.25rem;">&iquest;Por qu&eacute; es pagada?</h2>
+    <p style="font-size:.95rem;line-height:1.85;color:var(--muted);">
+      Una auditor&iacute;a pagada significa trabajo real. No es un pitch de ventas disfrazado de consulta gratis, ni un escaneo superficial de 15 minutos, ni un reporte con plantilla. Dedico 6&ndash;8 horas revisando personalmente tu tienda e implementando fixes. Los &euro;300 filtran marcas serias y garantizan que recibas un entregable real &mdash; decidas o no trabajar conmigo despu&eacute;s.
+    </p>
+  </div>
+</section>
+
+
+<!-- AUDITORIA DE EJEMPLO -->
+<section style="padding:48px 24px 64px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:700px;margin:0 auto;text-align:center;" class="fade-up">
+    <h2 style="font-weight:800;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;margin-bottom:1.25rem;">Ver una auditor&iacute;a de ejemplo</h2>
+    <div style="background:var(--elevated);border:1px solid var(--border);border-radius:16px;padding:4rem 2rem;margin-top:1.5rem;">
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.7;">Walkthrough de ejemplo en Loom pr&oacute;ximamente. Mientras tanto, agenda una llamada estrat&eacute;gica y te explico el proceso en vivo.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- QUE SE REVISA -->
+<section style="padding:80px 24px;">
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-0.03em;">Qu&eacute; se revisa</h2>
+      <p style="color:var(--muted);font-size:.925rem;line-height:1.75;margin-top:.75rem;">Cada auditor&iacute;a cubre estas &aacute;reas de tu tienda Shopify:</p>
+    </div>
+    <div class="fade-up" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Front-end y UX de la tienda</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Estructura de p&aacute;gina de producto (PDP)</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Flujo de checkout</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Comportamiento m&oacute;vil</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Velocidad de carga y Core Web Vitals</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Estado de Klaviyo (flows, salud de listas)</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Meta tags y SEO on-page</span></div>
+      <div class="check-item" style="padding:.75rem 0;"><div class="check-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span style="font-size:.875rem;color:rgba(11,19,43,0.75);">Configuraci&oacute;n t&eacute;cnica de Shopify</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TIEMPO DE ENTREGA -->
+<section style="padding:48px 24px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:600px;margin:0 auto;text-align:center;" class="fade-up">
+    <h2 style="font-weight:800;font-size:clamp(1.4rem,2.5vw,1.8rem);letter-spacing:-0.02em;margin-bottom:.75rem;">7 d&iacute;as desde el pago.</h2>
+    <p style="font-size:.925rem;line-height:1.75;color:var(--muted);">
+      Ese es el tiempo de entrega. Si estoy a capacidad, el siguiente espacio disponible se muestra de forma transparente antes de que pagues. Sin sorpresas.
+    </p>
+  </div>
+</section>
+
+
+<!-- CAMINO AL RETAINER -->
+<section style="padding:64px 24px;">
+  <div style="max-width:600px;margin:0 auto;text-align:center;" class="fade-up">
+    <p style="font-size:.95rem;line-height:1.85;color:var(--muted);margin-bottom:1rem;">
+      La mitad de los clientes de auditor&iacute;a contin&uacute;an con un retainer. Los planes empiezan en &euro;1,200 por mes. Sin presi&oacute;n &mdash; la auditor&iacute;a se sostiene por s&iacute; sola.
+    </p>
+    <a href="/es#packages" style="font-size:.85rem;color:#2563EB;text-decoration:none;font-weight:600;transition:opacity .2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">Ver planes de retainer &rarr;</a>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section style="padding:64px 24px 80px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div style="max-width:640px;margin:0 auto;">
+    <div class="fade-up" style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-0.03em;">Preguntas</h2>
+    </div>
+    <div id="faq-list" class="fade-up">
+      <div class="faq-item" data-index="0">
+        <button class="faq-trigger" onclick="toggleFaq(0)" aria-expanded="false">
+          <span>&iquest;Qu&eacute; pasa si no me gusta la auditor&iacute;a?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <line class="faq-icon-line faq-icon-h" x1="2" y1="7" x2="12" y2="7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+              <line class="faq-icon-line faq-icon-v" x1="7" y1="2" x2="7" y2="12" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <p class="faq-answer">Reembolso incondicional dentro de 7 d&iacute;as de la entrega. Sin preguntas. Prefiero devolverte tu dinero a que sientas que no vali&oacute; la pena.</p>
+        </div>
+      </div>
+      <div class="faq-item" data-index="1">
+        <button class="faq-trigger" onclick="toggleFaq(1)" aria-expanded="false">
+          <span>&iquest;Tengo que comprar un retainer despu&eacute;s?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <line class="faq-icon-line faq-icon-h" x1="2" y1="7" x2="12" y2="7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+              <line class="faq-icon-line faq-icon-v" x1="7" y1="2" x2="7" y2="12" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <p class="faq-answer">No. La auditor&iacute;a es un producto independiente. Entrega valor por s&iacute; sola. Si quieres seguir trabajando juntos despu&eacute;s, genial &mdash; pero no hay ninguna obligaci&oacute;n.</p>
+        </div>
+      </div>
+      <div class="faq-item" data-index="2">
+        <button class="faq-trigger" onclick="toggleFaq(2)" aria-expanded="false">
+          <span>&iquest;Qu&eacute; pasa si mi tienda no est&aacute; en Shopify?</span>
+          <div class="faq-icon">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <line class="faq-icon-line faq-icon-h" x1="2" y1="7" x2="12" y2="7" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+              <line class="faq-icon-line faq-icon-v" x1="7" y1="2" x2="7" y2="12" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </button>
+        <div class="faq-body">
+          <p class="faq-answer">Las auditor&iacute;as actualmente son solo para Shopify. La revisi&oacute;n t&eacute;cnica, la verificaci&oacute;n de integraci&oacute;n con Klaviyo y los fixes a nivel de tema requieren Shopify. Si est&aacute;s en otra plataforma, esto no es lo indicado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA FINAL -->
+<section style="padding:80px 24px;text-align:center;">
+  <div style="max-width:600px;margin:0 auto;" class="fade-up">
+    <h2 style="font-weight:800;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-0.03em;margin-bottom:1rem;">
+      &iquest;Listo para descubrir qu&eacute; te est&aacute; costando dinero?
+    </h2>
+    <p style="font-size:.95rem;line-height:1.75;color:var(--muted);margin-bottom:2rem;">
+      &euro;300. 7 d&iacute;as. Un solo pago. Fixes reales.
+    </p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="#stripe-payment-link" class="btn btn-primary-lg">
+        Pagar Ahora &mdash; &euro;300
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#calendly-link" class="btn btn-outline-lg">Agendar Llamada Estrat&eacute;gica</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer style="border-top:1px solid var(--border);padding:40px 24px 28px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;">
+      <a href="/es" class="nav-brand">
+        <img src="../../brand_assets/airweb-logo.svg" style="width:26px;height:26px;object-fit:contain;" alt="AirWeb" />
+        <span class="nav-brand-name" style="font-size:.95rem;">AirWeb</span>
+      </a>
+      <p style="font-size:.75rem;color:rgba(71,85,105,0.6);">&copy; 2026 AirWeb. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- SCRIPTS -->
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  let openIndex = null;
+  function toggleFaq(index) {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach((item, i) => {
+      const body = item.querySelector('.faq-body');
+      const btn = item.querySelector('.faq-trigger');
+      if (i === index) {
+        const isOpen = item.classList.contains('open');
+        if (isOpen) { item.classList.remove('open'); body.classList.remove('open'); btn.setAttribute('aria-expanded','false'); openIndex = null; }
+        else { item.classList.add('open'); body.classList.add('open'); btn.setAttribute('aria-expanded','true'); openIndex = index; }
+      } else {
+        item.classList.remove('open'); body.classList.remove('open'); btn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
